@@ -27,8 +27,8 @@ public class UserRolesDaoHibernateImpl implements UserRolesDao {
         } catch (HibernateException e) {
             logger.error("Error while finding roles for User with id = " + id, e);
             throw new DatabaseException("Error while finding roles for User with id = " + id, e);
-        } finally {
-            session.close();
-        }
+        } //finally {
+//            session.close();
+//        }
     }
 }

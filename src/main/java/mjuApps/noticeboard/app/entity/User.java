@@ -35,12 +35,12 @@ public class User implements Serializable {
     private StatusEnum statusEnum;
 
     @OneToMany (mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<UserRolesEnum> userRolesList;
+    private List<UserRoles> userRolesList;
 
     public User() {
     }
 
-    public User(String login, String visibleName, String firstName, String lastName, String email, String password, StatusEnum statusEnum, List<UserRolesEnum> userRolesList) {
+    public User(String login, String visibleName, String firstName, String lastName, String email, String password, StatusEnum statusEnum, List<UserRoles> userRolesList) {
         this.login = login;
         this.visibleName = visibleName;
         this.firstName = firstName;
@@ -83,7 +83,7 @@ public class User implements Serializable {
         return statusEnum;
     }
 
-    public List<UserRolesEnum> getUserRolesList() {
+    public List<UserRoles> getUserRolesList() {
         return userRolesList;
     }
 }
