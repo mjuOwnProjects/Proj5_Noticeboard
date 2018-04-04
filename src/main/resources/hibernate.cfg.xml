@@ -26,6 +26,7 @@
         <mapping class="mjuApps.noticeboard.app.entity.User"/>
         <mapping class="mjuApps.noticeboard.app.entity.UserStatus"/>
         <mapping class="mjuApps.noticeboard.app.entity.UserRole"/>
+        <mapping class="mjuApps.noticeboard.app.entity.UserRoleDefinition"/>
 
     </session-factory>
 </hibernate-configuration>

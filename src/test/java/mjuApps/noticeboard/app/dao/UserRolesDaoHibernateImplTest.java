@@ -30,6 +30,10 @@ public class UserRolesDaoHibernateImplTest {
         User user = userDao.getById(2);
         List<UserRole> userRoles = user.getUserRolesList();
         Assert.assertEquals("List size should be 2", 2, userRoles.size());
+
+        for (UserRole userRole : userRoles) {
+            System.out.println(userRole.toString());
+        }
     }
 
 }

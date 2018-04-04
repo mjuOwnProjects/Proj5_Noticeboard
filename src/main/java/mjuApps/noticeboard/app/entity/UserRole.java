@@ -3,6 +3,7 @@ package mjuApps.noticeboard.app.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "user_roles")
@@ -15,27 +16,29 @@ public class UserRole implements Serializable {
     @Column(name = "user_id")
     private Integer id;
 
-    @Id
-    @Column(name = "user_role_id")
-    private Integer roleId;
+    //  @Id
+    //  @Column(name = "user_role_id")
+    @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
+    private List<UserRoleDefinition> userRoleDefinition;
 
     public UserRole() {}
 
-    public UserRole(Integer id, Integer roleId) {
+    public UserRole(Integer id, List<UserRoleDefinition> userRoleDefinition) {
         this.id = id;
-        this.roleId = roleId;
+        this.userRoleDefinition = userRoleDefinition;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public List<UserRoleDefinition> getRoleId() {
+        return userRoleDefinition;
     }
 
     @Override
     public String toString() {
-        return "[" + id + ", " + roleId + "]";
+        return "[" + id + ", " + userRoleDefinition.toString() + "]";
     }
 }
