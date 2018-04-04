@@ -15,14 +15,16 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public User getById(Integer id) throws DatabaseException {
-        Session session;
-        User user;
+        Session session=null;
+        User user=null;
         try {
             session = sessionFactory.openSession();
-            user = session.find(User.class,id);
-            session.close();
+            user = session.get(User.class,id);
         } catch (HibernateException ex) {
+            logger.error("Error while getting user with id " + id,ex);
             throw new DatabaseException("Error while getting user with id " + id);
+        } finally {
+            session.close();
         }
         return user;
     }

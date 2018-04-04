@@ -24,9 +24,8 @@
         <property name="hbm2ddl.auto"/>
 
         <mapping class="mjuApps.noticeboard.app.entity.User"/>
-        <mapping class="mjuApps.noticeboard.app.entity.StatusEnum"/>
-        <mapping class="mjuApps.noticeboard.app.entity.UserRoles"/>
-        <mapping class="mjuApps.noticeboard.app.entity.UserRolesEnum"/>
+        <mapping class="mjuApps.noticeboard.app.entity.UserStatus"/>
+        <mapping class="mjuApps.noticeboard.app.entity.UserRole"/>
 
     </session-factory>
 </hibernate-configuration>
